@@ -31,13 +31,15 @@ class ProductTile extends ConsumerWidget {
                     context: context,
                     builder: (BuildContext context) {
                       return ShowModalProduct(
-                        onAdd: (code, type, brand, cpu) async {
+                        onAdd: (code, type, brand, cpu, ram, hdd) async {
                           final updatedProduct = Product(
                             id: product.id,
                             code: code,
                             type: type,
                             brand: brand,
                             cpu: cpu,
+                            ram: ram,
+                            hdd: hdd,
                           );
                           await ref
                               .read(productControllerProvider.notifier)

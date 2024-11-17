@@ -9,11 +9,15 @@ void initializeProductForm({
   required TextEditingController typeController,
   required TextEditingController brandController,
   required TextEditingController cpuController,
+  required TextEditingController ramController,
+  required TextEditingController hddController,
 }) {
   if (isEditMode && editedProduct != null) {
     codeController.text = editedProduct.code.toString();
     typeController.text = editedProduct.type.toString();
     brandController.text = editedProduct.brand.toString();
     cpuController.text = editedProduct.cpu.toString();
+    ramController.text = editedProduct.ram.toString();
+    hddController.text = editedProduct.hdd.toString();
   }
 }

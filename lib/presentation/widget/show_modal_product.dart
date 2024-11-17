@@ -6,7 +6,7 @@ import 'custom_text_field.dart';
 
 //Add product + Edit product call from product_ui
 class ShowModalProduct extends StatefulWidget {
-  final void Function(String, String, String, String) onAdd;
+  final void Function(String, String, String, String, String, String) onAdd;
   final bool isEditMode;
   final Product? editedProduct;
 
@@ -26,6 +26,8 @@ class ShowModalProductState extends State<ShowModalProduct> {
   final TextEditingController typeController = TextEditingController();
   final TextEditingController brandController = TextEditingController();
   final TextEditingController cpuController = TextEditingController();
+  final TextEditingController ramController = TextEditingController();
+  final TextEditingController hddController = TextEditingController();
 
   @override
   void initState() {
@@ -37,6 +39,8 @@ class ShowModalProductState extends State<ShowModalProduct> {
       typeController: typeController,
       brandController: brandController,
       cpuController: cpuController,
+      ramController: ramController,
+      hddController: hddController,
     );
   }
 
@@ -46,20 +50,28 @@ class ShowModalProductState extends State<ShowModalProduct> {
       padding: const EdgeInsets.all(16.0),
       children: [
         CustomTextField(
-          label: 'Code',
+          label: 'Codigo',
           controller: codeController,
         ),
         CustomTextField(
-          label: 'type',
+          label: 'Tipo',
           controller: typeController,
         ),
         CustomTextField(
-          label: 'brand',
+          label: 'Marca',
           controller: brandController,
         ),
         CustomTextField(
-          label: 'cpu',
+          label: 'Cpu',
           controller: cpuController,
+        ),
+        CustomTextField(
+          label: 'RAM',
+          controller: ramController,
+        ),
+        CustomTextField(
+          label: 'HDD',
+          controller: hddController,
         ),
         const SizedBox(height: 16),
         ActionButtons(
@@ -69,6 +81,8 @@ class ShowModalProductState extends State<ShowModalProduct> {
               typeController.text,
               brandController.text,
               cpuController.text,
+              ramController.text,
+              hddController.text,
             );
             Navigator.pop(context);
           },

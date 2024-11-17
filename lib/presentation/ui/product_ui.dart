@@ -35,12 +35,14 @@ class ProductUiState extends ConsumerState<ProductUi> {
                 context: context,
                 builder: (BuildContext context) {
                   return ShowModalProduct(
-                    onAdd: (code, type, brand, cpu) async {
+                    onAdd: (code, type, brand, cpu, ram, hdd) async {
                       final newProduct = Product(
                         code: code,
                         type: type,
                         brand: brand,
                         cpu: cpu,
+                        ram: ram,
+                        hdd: hdd,
                       );
                       await ref
                           .read(productControllerProvider.notifier)

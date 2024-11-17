@@ -48,7 +48,10 @@ class ProductController extends StateNotifier<AsyncValue<List<Product>>> {
                 code: item['code'],
                 type: item['type'],
                 brand: item['brand'],
-                cpu: item['cpu']))
+                cpu: item['cpu'],
+                ram: item['ram'],
+                hdd: item['hdd'],
+                ))
             .toList();
 
         state = AsyncValue.data(productList);

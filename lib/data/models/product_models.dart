@@ -4,6 +4,8 @@ class Product {
   final String type;
   final String? brand;
   final String? cpu;
+  final String? ram;
+  final String? hdd;
 
   Product({
     this.id,
@@ -11,6 +13,8 @@ class Product {
     required this.type,
     this.brand,
     this.cpu,
+    this.ram,
+    this.hdd,
   });
 
   Map<String, dynamic> toJson() {
@@ -20,6 +24,8 @@ class Product {
       'type': type,
       'brand': brand,
       'cpu': cpu,
+      'ram': ram,
+      'hdd': hdd,
     };
   }
 }
